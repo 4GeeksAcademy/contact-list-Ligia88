@@ -38,49 +38,68 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			  },
 			  
-			  actions: {
-				//add contact to
-			  }
+			 
+				  actions: {
+					// Add contact to the list
+					addContact: (contact) => {
+					  let listOfContacts = getStore().contacts;
+					  const newContact = {
+						id: listOfContacts.length + 1,
+						...contact
+					  };
+					  setStore({ contacts: [...listOfContacts, newContact] });
+					},
 			  
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			}
-		}
-	};
-};
-
-export default getState;
+					// Edit contact from the list
+					editContact: (id, updatedContact) => {
+					  let listOfContacts = getStore().contacts;
+					  const contactIndex = listOfContacts.findIndex(contact => contact.id === id);
+					  if (contactIndex !== -1) {
+						const updatedContacts = [...listOfContacts];
+						updatedContacts[contactIndex] = { id, ...updatedContact };
+						setStore({ contacts: updatedContacts });
+					  }
+					},
+			  
+					// Toggle the modal on
+					toggleModal: (show) => {
+					  setStore({ showModal: show })
+					},
+			  
+					// Check if all fields are filled else show modal
+					checkEmptyFields: (newContact) => {
+					  const { name, homeAddress, phone, email } = newContact;
+					  if (name && homeAddress && phone && email) {
+						getActions().addContact(newContact);
+					  } else {
+						getActions().toggleModal(true);
+					  }
+					},
+			  
+					// Close modal button
+					closeModal: () => {
+					  setStore({ showModal: false });
+					},
+			  
+					// Set contact to be deleted
+					setContactToBeDeleted: (contact) => {
+					  setStore({ contactToBeDeleted: contact });
+					},
+			  
+					// Close the confirm delete modal without deleting a record
+					closeDeleteModal: () => {
+					  setStore({ showModal: false, contactToBeDeleted: null });
+					},
+			  
+					// Delete contact from the list
+					deleteContact: (contact) => {
+					  let listOfContacts = getStore().contacts;
+					  setStore({ contacts: listOfContacts.filter((item) => item !== contact) });
+					  getActions().closeDeleteModal();
+					},
+				  }
+				};
+			  };
+			  
+			  export default getState;
+			  
