@@ -11,8 +11,8 @@ body {
     min-height: 100vh;
     padding: 30px;
 
-    color: rgb(231, 231, 238);
-    background: black
+    color: rgb(112, 112, 121);
+    background: rgb(170, 126, 126)
 }
 
 h2 {
@@ -49,12 +49,7 @@ i {
     margin-left: 1rem;
 }
 
-.card-button {
-    display: flex;
-    float: right;
-    margin-right: 0.5rem;
-    background-color: transparent;
-    border: none;
+
 
 
 

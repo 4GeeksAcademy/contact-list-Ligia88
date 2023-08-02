@@ -18,7 +18,7 @@ function Card() {
                 <div className="card mb-3 mx-5" key={contact.id} >
                     <div className="row g-0">
                         <div className="col-md-3">
-                            <img src={avatar} className="img-fluid" alt="Contact Profile Picture" />
+                            <img src={contact.avatar} className="img-fluid" alt="Contact Profile Picture" />
                         </div>
                         <div className="col-md-6">
                             <div className="card-body">
@@ -54,7 +54,6 @@ function Card() {
                     </div>
                 </div>
             )}
-            <DeleteModal />
         </div>
     );
 }
