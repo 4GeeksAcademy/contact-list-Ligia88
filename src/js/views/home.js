@@ -13,7 +13,7 @@ export const Home = () => (
 		<Card />
 		<Link to="/profile">
 		<button href="#" className="btn btn-success">
-			Ir al perfil
+			
 		</button>
 		</Link>
 	</div>

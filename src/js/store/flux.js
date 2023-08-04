@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					homeAddress: "Malaga, Spain",
 					phone: "(555) 555-5555",
 					email: "pablo@exampleemail.com",
-					avatar: "https://raw.githubusercontent.com/4GeeksAcademy/contact-list-Ligia88/master/src/img/picasso.JPG"
+					avatar: "https://images.fineartamerica.com/images-medium-large-5/pablo-picasso-richard-day.jpg"
 
 				},
 				{
@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					homeAddress: "Mexico City, Mexico",
 					phone: "(555) 111-2222",
 					email: "frida@exampleemail.com",
-					avatar: "https://pymstatic.com/8944/conversions/frida-kahlo-wide_webp.webp"
+					avatar: "https://www.art2arts.co.uk/media/catalog/product/cache/d5996e589f780f8ad9b2ca7923039f74/f/r/frida_kahlo_2.jpg"
 
 				},
 			]
