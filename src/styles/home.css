@@ -1,3 +1,4 @@
+
 :root {
     font-size: 18px;
 }
@@ -7,10 +8,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     min-height: 100vh;
     padding: 30px;
-
     color: rgb(112, 112, 121);
     background: rgb(170, 126, 126)
 }
@@ -24,13 +23,10 @@ p {
     margin-left: 0.5rem;
 }
 
-
-
 i {
     color: #224;
     position: relative;
     top: 5px;
-
 }
 
 .card {
@@ -49,9 +45,18 @@ i {
     margin-left: 1rem;
 }
 
+/* Estilos para el botón "Add Contact" */
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-
-
-
-
-
+.btn-success:hover {
+    background-color: #218838;
+}
