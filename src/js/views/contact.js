@@ -11,7 +11,7 @@ export const Contact = () => {
 		<div className="container">
 			<div className="px-3">
 				<Link to="/add">
-					<button className="btn btn-success">Add a New Contact</button>
+					<button className="btn btn-success">Add Contact</button>
 				</Link>
 			</div>
 			<div className="py-3">
