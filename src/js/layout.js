@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-import AddContact from "./component/AddContact";
+import Contact from "./component/AddContact";
 
 
 import { Home } from "./views/home";
@@ -33,7 +33,7 @@ const Layout = () => {
 						<Route path="*" element={<h1>Not found!</h1>} />
 						<Route path="/tarjeta" element={<Card />} />
 						<Route path="/edit/:id" element={<Edit />} />
-						<Route path="/add" element={<AddContact />} /> 
+						<Route path="/add" element={<Contact />} /> 
 
 					</Routes>
 					<Footer />
